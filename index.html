@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <!-- <link rel="icon" href="images/"> -->
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-CuOF+2SnTUfTwSZjCXf01h7uYhfOBuxIhGKPbfEJ3+FqH/s6cIFN9bGr1HmAg4fQ" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+
+    <div class="container">
+        <div class="col-lg-10 col-12 mr-auto ml-auto p-lg-5 p-1 mt-5 mb-5" style="border-radius: 5px;
+        background: #ffffff;
+        box-shadow:  15px 15px 31px #adadad, 
+                     -15px -15px 31px #ffffff;">
+
+            <form class="col-lg-10 col-10 mr-auto ml-auto p-lg-5 p-1" autocomplete="off">
+                
+
+                <!-- meter to feet -->
+                
+                <h1 class="text-center mt-5 mb-5">Meter to Feet Calculator</h1>
+                <h5>Please enter a numeric value</h5>
+                <input id="value1" type="number" class="form-control" placeholder="meter" oninput="meterTofeet(parseInt(this.value))">
+                <h6>Result:</h6>
+                <h1 class="text-center" id="result1">0</h1>
+                <hr class="mt-5">
+
+                <!-- feet to mile -->
+                
+                <h1 class="text-center mt-5 mb-5">Feet to Mile Calculator</h1>
+                <h5>Please enter a numeric value</h5>
+                <input id="value2" type="number" class="form-control" placeholder="feet" oninput="feetTomile(parseInt(this.value))">
+                <h6>Result:</h6>
+                <h1 class="text-center" id="result2">0</h1>
+                <hr class="mt-5">
+
+                <!-- wood calculator -->
+
+                <h1 class="text-center mt-5 mb-5">Wood Calculator</h1>
+                <h5>Please enter the quantity of Chairs:</h5>
+                <input id="chairC" type="number" class="form-control mb-3" placeholder="Chairs"  onchange="chairCount(parseInt(this.value))">
+                <h5>Please enter the quantity of Tables:</h5>
+                <input id="tableC" type="number" class="form-control mb-3" placeholder="Tables"   onchange="bedCount(parseInt(this.value))">
+                <h5>Please enter the quantity of Beds:</h5>
+                <input id="bedC" type="number" class="form-control mb-4" placeholder="Bed"   onchange="tableCount(parseInt(this.value))">
+
+                <input type="button" class="d-block btn btn-danger mr-auto ml-auto mb-4" value="Calculate" onclick="woodCalc();">
+
+                <h2 class="text-center">You will need <span id="woodCalc" class="fs-3">0</span> ft<sup>3</sup> of wood</h2>
+                <hr class="mt-5">
+
+                <!-- brick calculator -->
+                
+                <h1 class="text-center mt-5 mb-5">Brick Calculator</h1>
+                <h5>Please enter the number of floors in your building</h5>
+                <input id="value1" type="number" class="form-control" placeholder="floors" oninput="brickCalc(this.value)" onchange="brickCalc(this.value)">
+                <h6>Result:</h6>
+                <h1 class="text-center" id="brickresult">0</h1>
+                <hr class="mt-5">
+
+                <!-- friend with short name -->
+
+                <h1 class="text-center mt-5 mb-5">Enter your friends names separated by comma (,)</h1>
+                <textarea name="friends" id="fNames" class="form-control" cols="30" rows="5" placeholder="Enter your friends names separated by comma" onchange="getNames(this.value)"></textarea>
+
+                <input type="button" class="d-block btn btn-danger mr-auto ml-auto mb-4 mt-4" value="Calculate" onclick="shortName();">
+
+                <h5 class="mt-4">Names: <span id="namesShow"></span></h5>
+
+                <h1 class="mt-4">Shortest Name: <span id="shortname"></span></h1>
+
+            </form>
+        </div>
+    </div>
+    <footer>
+        <p class="text-right p-4">Sk Salman Khan</p>
+    </footer>
+
+
+
+
+    
+  <!-- <label>Feet</label>
+  <input id="value2" type="number" placeholder="Feet" oninput="feetTomile(this.value)" onchange="LengthConverter(this.value)">
+
+  <p>cm: <span id="result2"></span></p>
+  <p id="woodCalc">ASASD</p> -->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-popRpmFF9JQgExhfw5tZT4I9/CI5e2QcuUZPOVXb1m7qUmeR2b50u+YFEYe1wgzy" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
